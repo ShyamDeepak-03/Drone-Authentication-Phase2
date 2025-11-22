@@ -1,0 +1,7 @@
+In ZKPModule.cc, in verifyProof function, add:
+
+    EV << "Verifying proof:" << endl;
+    EV << "  Proof size: " << proof.proofData.size() << endl;
+    EV << "  Expected commitment size: " << publicCommitment.size() << endl;
+    EV << "  Received commitment size: " << proof.commitment.size() << endl;
+    EV << "  Commitments match: " << (proof.commitment == publicCommitment ? "YES" : "NO") << endl;

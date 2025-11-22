@@ -1,0 +1,13 @@
+--- GroundStation.cc.old
++++ GroundStation.cc
+@@ -68,8 +68,8 @@
+     std::vector<uint8_t> data(chunk->getBytes().begin(), chunk->getBytes().end());
+     
+     // Get source address for response
+-    auto srcAddr = packet->getTag<L3AddressInd>()->getSrcAddress();
+-    auto srcPort = packet->getTag<L4PortInd>()->getSrcPort();
++    auto srcAddr = packet->getTag<inet::L3AddressInd>()->getSrcAddress();
++    auto srcPort = packet->getTag<inet::L4PortInd>()->getSrcPort();
+     
+     // Parse message type
+     if (data.size() < 1) {
